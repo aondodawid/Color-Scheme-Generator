@@ -1,11 +1,15 @@
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color scheme</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
@@ -13,7 +17,12 @@
   <body>
     <div class="wrapper">
       <form>
-        <input type="color" id="color-input" class="color-input" />
+        <input
+          type="color"
+          id="color-input"
+          value="#f55a5a"
+          class="color-input"
+        />
         <div class="custom-select" id="custom-select">
           <select id="color-scheme">
             <option value="Monochrome">Monochrome</option>

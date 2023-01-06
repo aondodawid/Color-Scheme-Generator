@@ -18,30 +18,43 @@ form {
   font-weight: normal;
 }
 
+body {
+  background-color: #1C1C1C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main,
 form {
   background: #1F2937;
-  padding: 1.5em 0.875em;
   display: flex;
 }
 
-main {
-  background: #1F2937;
-  display: flex;
+form {
+  padding: 1.5em 0.875em;
 }
 
 button {
   width: 123px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  background: #3D4B60;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 }
 
 .wrapper {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   max-width: 550px;
 }
 
 .color-container {
+  display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
@@ -49,8 +62,18 @@ button {
   min-height: 414px
 }
 
+.color-input {
+  width: 61px;
+  min-height: 42px;
+}
+
 .color-name {
+  font-size: 0.75rem;
+  color: #D5D4D8;
+  font-weight: 500;
+  line-height: 1.5;
   text-align: center;
+  padding: 0.75rem 0;
 }
 
 /***
@@ -64,6 +87,7 @@ button {
   position: relative;
   font-weight: 400;
   width: 312px;
+  margin: 0 0.75rem;
 }
 
 .custom-select select {
@@ -74,6 +98,8 @@ button {
 .select-selected {
   background-color: #1F2937;
   color: #D5D4D8;
+  border: solid #D1D5DB 1px;
+  border-radius: 6px;
 }
 
 /* Style the arrow inside the select element: */
@@ -82,21 +108,28 @@ button {
   content: "";
   top: 14px;
   right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
+  background-image: url("./images/Selector-down.png");
+  background-size: 20px 20px;
+  top: 10px;
+  float: right;
+  width: 20px;
+  height: 20px;
 }
 
 /* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
+  background-image: url("./images/Selector.png");
+  background-size: 20px 20px;
   top: 7px;
+  float: right;
+  width: 20px;
+  height: 20px;
 }
 
 /* style the items (options), including the selected item: */
 .select-items div,
 .select-selected {
+  line-height: 1.5;
   color: #ffffff;
   padding: 8px 16px;
   cursor: pointer;
@@ -112,15 +145,72 @@ button {
   z-index: 99;
 }
 
-
 /* Hide the items when the select box is closed: */
 .select-hide {
   display: none;
 }
 
-.select-items div:hover,
+/* Style the checkmark inside the option element and selected option element: */
 .same-as-selected {
+  font-weight: 600;
+}
+
+.same-as-selected::after {
+  position: relative;
+  content: "";
+  background-image: url("./images/Check.png");
+  background-size: 20px 20px;
+  top: 6px;
+  float: right;
+  width: 20px;
+  height: 20px;
+}
+
+.select-items div:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Custom dropdown select end */
+
+@media screen and (max-width: 550px) {
+  main {
+    flex-direction: column;
+  }
+
+  form {
+    padding-bottom: 0;
+    flex-direction: column;
+  }
+
+  button {
+    display: inline-block;
+    width: 120px;
+    align-self: end;
+    margin-top: 1.5rem;
+    height: 42px;
+    order: 2;
+  }
+
+  .wrapper {
+    width: 90%;
+  }
+
+  .color {
+    min-height: 70px;
+  }
+
+  .custom-select {
+    margin: 0;
+    width: 100%;
+  }
+
+  .color-input {
+    width: 120px;
+    position: relative;
+    bottom: 42px;
+    display: inline-block;
+    order: 3;
+    align-self: auto;
+  }
+
+}

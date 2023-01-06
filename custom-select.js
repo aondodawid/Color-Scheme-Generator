@@ -74,7 +74,7 @@ except the current select box: */
       if (elmnt == selectSelected[i]) {
         arrNo.push(i);
       } else {
-        selectSelected(i).classList.remove("select-arrow-active");
+        selectSelected[i].classList.remove("select-arrow-active");
       }
     }
     for (let i = 0; i < selectItem.length; i++) {
