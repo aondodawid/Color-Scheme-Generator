@@ -4,21 +4,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div class="wrapper">
       <form>
-        <input type="color" id="color-picker" />
-        <select id="color-scheme">
-          <option value="Monochrome">Monochrome</option>
-          <option value="Monochrome-dark">Monochrome-dark</option>
-          <option value="Monochrome-light">Monochrome-light</option>
-          <option value="Analogic">Analogic</option>
-          <option value="Complement">Complement</option>
-          <option value="Analogic-complement">Analogic-complement</option>
-          <option value="Analogic-Triad">Analogic-Triad</option>
-        </select>
+        <input type="color" id="color-input" class="color-input" />
+        <div class="color-scheme">
+          <select id="color-scheme" class="color-scheme--select">
+            <option value="Monochrome">Monochrome</option>
+            <option value="Monochrome-dark">Monochrome-dark</option>
+            <option value="Monochrome-light">Monochrome-light</option>
+            <option value="Analogic">Analogic</option>
+            <option value="Complement">Complement</option>
+            <option value="Analogic-complement">Analogic-complement</option>
+            <option value="Analogic-Triad">Analogic-Triad</option>
+          </select>
+        </div>
         <button>Get color scheme</button>
       </form>
       <main>
