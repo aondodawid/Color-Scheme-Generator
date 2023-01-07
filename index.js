@@ -1,11 +1,12 @@
 import createCustomSelect from "./custom-select";
 
+const colorContainer = document.querySelectorAll(".color-container");
 const form = document.getElementById("new-color");
-const colors = document.querySelectorAll(".color");
 const notification = document.getElementById("message");
 let hiddenAfter5Sec;
 
 createCustomSelect();
+getData();
 
 function coppyMessage(message, data) {
   clearTimeout(hiddenAfter5Sec);
@@ -23,24 +24,34 @@ function copyToClipboard() {
     : "";
 }
 
-colors.forEach((color) => color.addEventListener("click", copyToClipboard));
+function render(arrData) {
+  colorContainer.forEach((color, index) => {
+    color.innerHTML = `
+        <div class="color" data-color="${arrData[index]}" style="background-color: ${arrData[index]}">
+        </div>
+        <div class="color-name">${arrData[index]}</div>
+      `;
+  });
+  document
+    .querySelectorAll(".color")
+    .forEach((color) => color.addEventListener("click", copyToClipboard));
+}
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  console.log(document.forms["new-color"].elements[0].value);
+function getData() {
   const colorInput = document.forms["new-color"].elements[0].value.slice(1);
   const colorScheme =
     document.forms["new-color"].elements[1].value.toLowerCase();
-
-  console.log(colorInput);
-
-  console.log(
-    `https://www.thecolorapi.com/scheme?hex-${colorInput}&mode=${colorScheme}&count=5`
-  );
 
   fetch(
     `https://www.thecolorapi.com/scheme?hex=${colorInput}&mode=${colorScheme}&count=5`
   )
     .then((res) => res.json())
-    .then((data) => console.log(data.colors));
+    .then((data) => {
+      render(data.colors.map((el) => el.hex.value));
+    });
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  getData();
 });
