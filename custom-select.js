@@ -71,16 +71,12 @@ except the current select box: */
     let arrNo = [];
 
     for (let i = 0; i < selectSelected.length; i++) {
-      if (elmnt == selectSelected[i]) {
-        arrNo.push(i);
-      } else {
-        selectSelected[i].classList.remove("select-arrow-active");
-      }
+      elmnt == selectSelected[i]
+        ? arrNo.push(i)
+        : selectSelected[i].classList.remove("select-arrow-active");
     }
     for (let i = 0; i < selectItem.length; i++) {
-      if (arrNo.indexOf(i)) {
-        selectItem[i].classList.add("select-hide");
-      }
+      arrNo.indexOf(i) ? selectItem[i].classList.add("select-hide") : "";
     }
   }
 

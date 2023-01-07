@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <form>
+      <form id="new-color">
         <input
           type="color"
           id="color-input"
@@ -38,26 +38,49 @@
       </form>
       <main>
         <div class="color-container">
-          <div class="color" style="background-color: #f55a5a"></div>
+          <div
+            class="color"
+            data-color="#f55a5a"
+            style="background-color: #f55a5a"
+          ></div>
           <div class="color-name">#F55A5A</div>
         </div>
         <div class="color-container">
-          <div class="color" style="background-color: #2b283a"></div>
+          <div
+            class="color"
+            data-color="#2b283a"
+            style="background-color: #2b283a"
+          ></div>
           <div class="color-name">#2B283A</div>
         </div>
         <div class="color-container">
-          <div class="color" style="background-color: #fbf3ab"></div>
+          <div
+            class="color"
+            data-color="#fbf3ab"
+            style="background-color: #fbf3ab"
+          ></div>
           <div class="color-name">#FBF3AB</div>
         </div>
         <div class="color-container">
-          <div class="color" style="background-color: #aad1b6"></div>
+          <div
+            class="color"
+            data-color="#aad1b6"
+            style="background-color: #aad1b6"
+          ></div>
           <div class="color-name">#AAD1B6</div>
         </div>
         <div class="color-container">
-          <div class="color" style="background-color: #a626d3"></div>
+          <div
+            class="color"
+            data-color="#a626d3"
+            style="background-color: #a626d3"
+          ></div>
           <div class="color-name">#A626D3</div>
         </div>
       </main>
+    </div>
+    <div class="message hidden" id="message">
+      You copied the hex code: #FBF3AB
     </div>
     <script src="index.js" type="module"></script>
   </body>
