@@ -241,4 +241,8 @@ button {
   .message {
     font-size: 0.8rem;
   }
+
+  .color-input {
+    width: 60px;
+  }
 }
