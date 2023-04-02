@@ -89,15 +89,17 @@ button {
   text-align: center;
 }
 
-.hidden {
-  visibility: hidden;
-}
+
 
 /***
  Custom dropdown select start 
 */
 
 /* The container must be positioned relative: */
+
+.hidden {
+  visibility: hidden;
+}
 
 .custom-select {
   display: inline-block;
