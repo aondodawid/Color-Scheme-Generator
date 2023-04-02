@@ -190,6 +190,7 @@ button {
 /* Custom dropdown select end */
 
 @media screen and (max-width: 550px) {
+
   main {
     flex-direction: column;
   }
@@ -210,6 +211,7 @@ button {
 
   .wrapper {
     width: 90%;
+    margin-top: 2em;
   }
 
   .color {
